@@ -13,6 +13,8 @@
     display: grid;
     grid-template-columns: auto auto auto;
     width:100%;
+    row-gap: 4rem;
+    column-gap: 2rem;
     align-items:center;
 }
 
@@ -24,7 +26,7 @@
 
 .valGrid div {
     border-radius: 5px;
-    width: 30%;
+    width: 100%;
     background-color: white;
     height: 300px;
     cursor: pointer;
