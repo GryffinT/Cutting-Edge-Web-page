@@ -25,6 +25,8 @@
 }
 
 .valGrid div {
+    border-color: black;
+    border-width: 10px;
     border-radius: 5px;
     width: 70%;
     background-color: white;
