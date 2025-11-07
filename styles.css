@@ -28,7 +28,7 @@
 .valGrid div {
     border-color: black;
     border-width: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     width: 70%;
     background-color: white;
     height: 300px;
@@ -139,3 +139,34 @@
     transition: background-color 1s ease, box-shadow 1s ease;
 }
 
+.logo-loop-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.logo-loop {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.logo-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: scroll 40s linear infinite;
+}
+
+.logo-track img {
+  height: 80px;
+  margin: 0 40px;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
