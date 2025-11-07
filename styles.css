@@ -9,11 +9,37 @@
     cursor: pointer;
 }
 
+.valGrid {
+    display: grid;
+    grid-template: auto auto auto;
+    width:100%;
+    align-items:center;
+}
+
 .cardimg {
     width:100%;
     height:50%;
     overflow: hidden;
 }
+
+.valGrid div {
+    border-radius: 5px;
+    width: 30%;
+    background-color: white;
+    height: 300px;
+    cursor: pointer;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valGrid div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/*
 
 .card {
     border-radius: 5px;
@@ -31,6 +57,8 @@
   transform: scale(1.05);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
+
+*/
 
 .badge {
     display: inline-block;
