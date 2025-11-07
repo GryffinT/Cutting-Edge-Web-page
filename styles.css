@@ -1,0 +1,83 @@
+.gButton {
+    background-color:maroon;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border:none;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.badge {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.623);
+}
+
+
+.tButton {
+    border:none;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 15px;
+    font-weight:bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+}
+
+/* .tButton:hover {
+    text-decoration: underline;
+    text-decoration-color: maroon;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+} */
+
+.tButton::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 3px;
+    background-color: maroon;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.tButton:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar.scrolled {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+    margin-top: -.5%;
+    margin-left: -.5%;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 2;
+    margin-top: -.5%;
+    margin-left: -.5%;
+    transition: background-color 1s ease, box-shadow 1s ease;
+}

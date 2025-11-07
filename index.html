@@ -6,22 +6,81 @@
         <title>Cutting Edge</title>
         <link rel="stylesheet" href="styles.css"> 
     </head>
-    <body>
-        <section>
-            <article>
+    <body style="font-family:Verdana, Geneva, Tahoma, sans-serif; background-color: rgb(236, 236, 236); margin-top: -.1%;">
+        <nav id="navbar" class="navbar">
+            <button class="tButton">PORTAL LOGIN</button>
+            <button class="tButton">HOME</button>
+            <img style="width: 100px; height: 100px;" src="https://i.postimg.cc/J7JsGs5S/Screenshot-2025-11-06-203858-removebg-preview.png">
+            <button class="tButton">SPONSORS</button>
+            <button class="tButton">THE TEAM</button>
+
+        </nav>
+        <script>
+            const navbar = document.getElementById('navbar');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 1) { /* SCROLL BAR HEIGHT STARTING POINT */
+                navbar.classList.add('scrolled');
+                } else {
+                navbar.classList.remove('scrolled');
+                }
+            });
+        </script>
+        <section style="
+            position: relative;
+            height: 90%;
+            display: flex;
+            flex-direction: column;  /* stack vertically */
+            align-items: center;     /* center horizontally */
+            justify-content: center; /* center vertically as a group */
+        ">
+            <img 
+                src="https://i.postimg.cc/V6ZcDWwM/32237069-sl-072622-51930-13.jpg"
+                alt="Edgewood Robotics background"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            
+            <article style="position: relative; z-index: 1; color: black; text-align: center;">
                 <h1>Cutting Edge</h1>
-                <h2>Edgewood Robotics</h2>
+                <h2 style="color: maroon;">Edgewood Robotics</h2>
+                <p>#000000</p>
                 <br>
                 <p>Engineering for the Future.</p>
+                <br>
+                <span style="display: flex;gap: 1rem;justify-content: center;"><button class="gButton">JOIN THE TEAM</button><button class="gButton">SPONSORS</button></span>
+                <br>
             </article>
-            <img src="placeholder" alt="">
-        </sections>
-        <section>
-            <article>
-                <p>
-                    Hello
-                </p>
-            </article>
+
+            <aside style="
+                position: relative;
+                z-index: 1;              /* above the image */
+                color: black;
+                text-align: center;
+                margin-top: 1rem;        /* space below the article */
+                display: flex;
+                gap: 10rem;
+            ">
+                <div id="members">
+                <h1 id="memberNum" style="font-size: medium;">NUM</h1>
+                <p style="font-size: small; color: gray;">Members</p>
+                </div>
+                <div id="seasons">
+                <h1 style="font-size: medium;" id="seasonsNum">NUM</h1>
+                <p style="font-size: small; color: gray;">Seasons</p>
+                </div>
+            </aside>
+        </section>
+        <section style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <h1 style="margin-top: 5%;">Mission Statement</h1>
+            <br>
+            <h5 style="width: 66%; text-align: center;">Cutting Edge strives to uphold truth, compassion, justice, community, and partnership in all things, in addition to XYZ.</h5>
+            <br>
+            <div style="display:flex; gap: 2rem;">
+                <span class="badge" style="background-color: rgb(2, 100, 2); border: 3px solid rgba(2, 100, 2, 0.89);">TRUTH</span>
+                <span class="badge" style="background-color: orange; border: 3px solid rgba(255, 166, 0, 0.938);">COMPASSION</span>
+                <span class="badge" style="background-color: rgb(180, 0, 0); border: 3px solid rgba(180, 0, 0, 0.938);">JUSTICE</span>
+                <span class="badge" style="background-color: gold; border: 3px solid rgba(255, 217, 0, 0.918);">COMMUNITY</span>
+                <span class="badge" style="background-color: purple; border: 3px solid rgba(128, 0, 128, 0.938);">PARTNERSHIP</span>
+            </div>
         </section>
     </body>
 </html>
