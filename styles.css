@@ -16,8 +16,7 @@
     row-gap: 4rem;
     column-gap: 1.5rem;
     align-items:center;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-right: 500px;
 }
 
 .cardimg {
@@ -28,7 +27,7 @@
 
 .valGrid div {
     border-radius: 5px;
-    width: 100%;
+    width: 70%;
     background-color: white;
     height: 300px;
     cursor: pointer;
