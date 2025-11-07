@@ -14,7 +14,7 @@
     grid-template-columns: auto auto auto;
     width:100%;
     row-gap: 4rem;
-    column-gap: -3rem;
+    column-gap: -10rem;
     align-items:center;
     justify-items: center;
 }
