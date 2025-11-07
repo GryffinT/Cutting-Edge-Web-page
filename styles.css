@@ -17,8 +17,12 @@
 
 .card {
   width: 450px;
+  background-color: white;
   height: 300px;
   cursor: pointer;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
