@@ -16,7 +16,7 @@
     row-gap: 4rem;
     column-gap: 1.5rem;
     align-items:center;
-    justify-items: end;
+    justify-items: center;
 }
 
 .cardimg {
