@@ -14,8 +14,10 @@
     grid-template-columns: auto auto auto;
     width:100%;
     row-gap: 4rem;
-    column-gap: 2rem;
+    column-gap: 1.5rem;
     align-items:center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .cardimg {
