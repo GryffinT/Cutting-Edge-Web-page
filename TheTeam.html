@@ -45,30 +45,41 @@
             </div>
         </section>
         <section>
+        <div style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            padding: 5% 0;
+            gap: 40px;
+        ">
             <div style="
-                text-align: center; 
-                padding: 10% auto 10% auto; 
-                width:100vw;display:grid;
-                grid-template-columns: repeat(2, 1fr);
-                justify-items:center;
+            flex: 1;
+            text-align: right;
+            padding-right: 40px;
             ">
-                <h1>Our people are our most valuable assets</h1>
-                <div style="
-                    background-color: white;
-                    border-radius: 15px;
-                    width:50%;
-                    height: 80%;
-                    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-                    text-align: center;
-                    display: flex;
-                    flex-direction: column;
-                ">
-                    <img src="..." class="cardImage">
-                    <h1>Name</h1>
-                    <h2>Role</h2>
-                    <p>Description</p>
-                </div>
+            <h1 style="font-size: 2em;">Our people are our most valuable assets</h1>
             </div>
+
+            <div style="
+            flex: 1;
+            background-color: white;
+            border-radius: 15px;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            overflow: hidden;
+            ">
+            <img src="..." class="cardImage" style="max-width: 100%; height: auto; border-radius: 15px 15px 0 0;">
+            <h1>Name</h1>
+            <h2>Role</h2>
+            <p>Description</p>
+            </div>
+        </div>
         </section>
     </body>
 </html>
