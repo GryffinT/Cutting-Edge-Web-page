@@ -9,41 +9,215 @@
     cursor: pointer;
 }
 
+.sponGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem 1rem;
+    padding: 3rem;
+    width: 100%;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .sponGrid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%; /* slightly wider on smaller screens */
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .sponGrid {
+        grid-template-columns: 1fr;
+        width: 95%;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+}
+
+
+.sponsorHero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  background-color: maroon;
+  height: 100vh;
+  width: 100%;
+  gap: 40px;
+  padding: 2% 5%;
+}
+
+.sponsorHero > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  color: white;
+  text-align: left;
+}
+
+/* --- Text Column --- */
+.textColumn h1 {
+  font-size: 50px;
+  margin: 0;
+  text-align: left;
+}
+
+.textColumn p {
+  font-weight: 100;
+  font-size: 25px;
+  max-width: 600px;
+}
+
+/* --- Card Column --- */
+.cardColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card styles */
+/* From Uiverse.io by andrew-demchenk0 */ 
+.card {
+  width: 400px;
+  height: 600px;
+  background: linear-gradient(135deg, rgb(255, 255, 255), rgb(138, 138, 138)); /* top-left bright */
+  position: relative;
+  transform: skewY(10deg);
+  border-top: 5px solid rgb(99, 1, 1);
+  border-left: 5px solid rgb(99, 1, 1);
+  border-right: 5px solid rgb(99, 1, 1);
+  border-bottom: 5px solid rgb(70, 0, 0); /* slightly lighter than previous to catch light */
+  box-sizing: border-box;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* Right edge “shadow” */
+.card::before {
+  content: '';
+  width: 10px;
+  height: 600px;
+  background: linear-gradient(to bottom, rgb(90, 10, 10), rgb(40, 0, 0));
+  position: absolute;
+  top: -5px;
+  right: -14.7px;
+  transform-origin: left;
+  transform: skewY(-45deg);
+  border: none;
+  transition: all 0.5s;
+}
+
+/* Top face */
+.card::after {
+  content: '';
+  height: 10px;
+  width: 400px;
+  background: linear-gradient(to right, rgb(180, 30, 30), rgb(120, 10, 10));
+  position: absolute;
+  top: -14px;
+  right: -5px;
+  transform-origin: bottom;
+  transform: skewX(-45deg);
+  border: none;
+  transition: all 0.5s;
+}
+
+/* Hover effects */
+.card:hover {
+  transform: skewY(0deg);
+}
+
+.card:hover::before {
+  width: 0px;
+  height: 595px;
+  right: 0;
+  top: 0.1px;
+}
+
+.card:hover::after {
+  width: 400px;
+  height: 0px;
+  right: 0.1px;
+  top: 0;
+}
+
+.card__content {
+  padding: 10px;
+  color: rgb(99, 1, 1);
+}
+
+
+
+/* Grid container */
 .valGrid {
     display: grid;
-    grid-template-columns: auto auto auto;
-    width:100%;
-    row-gap: 4rem;
-    column-gap: -10rem;
-    align-items:center;
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    column-gap: 1rem;       /* small gap between cards */
+    row-gap: 2rem;          /* small vertical gap between rows */
+    padding: 3rem;          /* more space between grid and screen edges */
+    width: 100%;
+    justify-items: center;  /* center cards horizontally in their cell */
+    align-items: start;     /* align cards to top of row */
+    box-sizing: border-box;
 }
 
-.cardimg {
-    width:100%;
-    height:50%;
-    overflow: hidden;
-}
-
-.valGrid div {
-    border-color: black;
-    border-width: 10px;
-    border-radius: 15px;
-    width: 70%;
+/* Cards inside the grid (div or section) */
+.valGrid div,
+.valGrid section {
+    width: 80%;             /* 80% of grid cell width */
+    min-height: 400px;      /* taller than wide */
     background-color: white;
-    height: 300px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; /* stack children vertically */
+    align-items: center;    /* center content horizontally */
+    justify-content: flex-start; /* start stacking from top */
     cursor: pointer;
-    display:flex;
-    align-items: center;
-    flex-direction: column;
+    box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;       /* ensures image or extra content doesn't overflow */
+    padding-bottom: 1rem;   /* optional padding for bottom spacing */
 }
+
+/* Card hover effect */
+.valGrid div:hover,
+.valGrid section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Images inside cards always at the top */
+.cardImage {
+    width: 100%;
+    height: 200px;             /* fixed height for consistent cards */
+    object-fit: cover;         /* image covers container without stretching */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: block;
+    margin-bottom: 1rem;       /* spacing between image and next element */
+}
+
+/* Optional: spacing between content elements inside card */
+.valGrid div > *,
+.valGrid section > * {
+    margin-bottom: 1rem;       /* default spacing between child elements */
+}
+
 
 .valGrid div:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
+.valGrid section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
 /*
 
 .card {
@@ -78,30 +252,25 @@
 
 
 .tButton {
-    border:none;
+    border: none;
     background-color: rgba(255, 255, 255, 0);
     font-size: 15px;
-    font-weight:bold;
+    font-weight: bold;
+    color: white;
     cursor: pointer;
     padding: 5px 10px;
     position: relative;
+    transition: color 0.3s ease;
 }
 
-/* .tButton:hover {
-    text-decoration: underline;
-    text-decoration-color: maroon;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
-} */
-
-.tButton::after{
+.tButton::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     bottom: -5px;
     height: 3px;
-    background-color: maroon;
+    background-color: rgb(207, 163, 15);
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.3s ease;
@@ -110,6 +279,7 @@
 .tButton:hover::after {
     transform: scaleX(1);
 }
+
 
 .navbar.scrolled {
     position: fixed;
@@ -170,3 +340,262 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+.expandingContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expandingCard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 22em;
+  max-width: 80%;
+  padding: 2em 0;
+  background: #FFF;
+  box-shadow: 0 0 6px 0 rgba(32, 32, 36, 0.12);
+  transition: all 0.35s ease;
+}
+
+.expandingCard::before, .expandingCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background:  rgb(192, 163, 0);
+  height: 4px;
+}
+
+.expandingCard::before {
+  width: 0;
+  opacity: 0;
+  transition: opacity 0 ease, width 0 ease;
+  transition-delay: 0.5s;
+}
+
+.expandingCard::after {
+  width: 100%;
+  background: white;
+  transition: width 0.5s ease;
+}
+
+.expandingCard .content {
+  width: 18em;
+  max-width: 80%;
+}
+
+.expandingCard .logo {
+  margin: 0 0 1em;
+  width: 10.625em;
+  transition: all 0.35s ease;
+}
+
+.expandingCard .h6 {
+  color: rgb(192, 163, 0);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.expandingCard .hover_content {
+  overflow: hidden;
+  max-height: 0;
+  transform: translateY(1em);
+  transition: all 0.55s ease;
+}
+
+.expandingCard .hover_content p {
+  margin: 1.5em 0 0;
+  color: #6E6E70;
+  line-height: 1.4em;
+}
+
+.expandingCard:hover {
+  width: 24em;
+  box-shadow: 0 10px 20px 0 rgba(32, 32, 36, 0.12);
+}
+
+.expandingCard:hover::before {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease, width 0.5s ease;
+  transition-delay: 0;
+}
+
+.expandingCard:hover::after {
+  width: 0;
+  opacity: 0;
+  transition: width 0 ease;
+}
+
+.expandingCard:hover .logo {
+  margin-bottom: 0.5em;
+}
+
+.expandingCard:hover .hover_content {
+  max-height: 10em;
+  transform: none;
+}
+
+@layer base, demo;
+@import url(https://fonts.bunny.net/css?family=abel:400);
+
+/* ---------- Demo / Carousel Styles ---------- */
+@layer demo {
+  .carousel-wrapper {
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    padding: 1rem; /* optional spacing around carousel */
+  }
+
+  .carousel {
+    --items: 7;
+    --carousel-duration: 40s;
+
+    @media (width > 600px) {
+      --carousel-duration: 40s;
+    }
+
+    --carousel-width: min(100vw, 100%);
+    --carousel-item-width: 280px;
+    --carousel-item-height: 450px;
+    --carousel-item-gap: 2rem;
+
+    --clr-cta: rgb(0, 132, 209);
+
+    position: relative;
+    width: var(--carousel-width);
+    height: var(--carousel-item-height);
+    overflow: clip;
+
+    &[mask] {
+      mask-image: linear-gradient(to right, transparent, black 10% 90%, transparent);
+    }
+
+    &[reverse] > article {
+      animation-direction: reverse;
+    }
+
+    &:hover > article {
+      animation-play-state: paused;
+    }
+  }
+
+  .carousel > article {
+    position: absolute;
+    top: 0;
+    left: calc(100% + var(--carousel-item-gap));
+    width: var(--carousel-item-width);
+    height: var(--carousel-item-height);
+    display: grid;
+    grid-template-rows: 200px auto 1fr auto;
+    gap: 0.25rem;
+    border: 1px solid light-dark(rgba(0 0 0 / 0.25), rgba(255 255 255 / 0.15));
+    padding-block-end: 1rem;
+    border-radius: 10px;
+    background: light-dark(white, rgba(255 255 255 / 0.05));
+    color: light-dark(rgb(49, 65, 88), white);
+
+    will-change: transform;
+    animation-name: marquee;
+    animation-duration: var(--carousel-duration);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: calc(var(--carousel-duration) / var(--items) * 1 * var(--i) * -1);
+
+    &:nth-child(1) { --i: 0; }
+    &:nth-child(2) { --i: 1; }
+    &:nth-child(3) { --i: 2; }
+    &:nth-child(4) { --i: 3; }
+    &:nth-child(5) { --i: 4; }
+    &:nth-child(6) { --i: 5; }
+    &:nth-child(7) { --i: 6; }
+    &:nth-child(8) { --i: 7; }
+  }
+
+  .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .carousel > article > *:not(img) {
+    padding: 0 1rem;
+  }
+
+  .carousel > article > div {
+    grid-row: span 2;
+    display: grid;
+    grid-template-rows: subgrid;
+    font-size: 0.8rem;
+  }
+
+  .carousel > article h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-block: 0.75rem 0.25rem;
+    margin: 0;
+  }
+
+  .carousel > article p {
+    margin: 0;
+  }
+
+  .carousel > article a {
+    text-decoration: none;
+    text-transform: lowercase;
+    border: 1px solid var(--clr-cta);
+    color: light-dark(var(--clr-cta), white);
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    place-self: start;
+    transition: 150ms ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--clr-cta);
+      color: white;
+      outline: none;
+    }
+  }
+
+  @keyframes marquee {
+    100% {
+      transform: translateX(calc((var(--items) * (var(--carousel-item-width) + var(--carousel-item-gap))) * -1));
+    }
+  }
+}
+
+/* ---------- Base / General Styles ---------- */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    /* Light theme colors */
+    --bg-light: rgb(240, 240, 240);
+    --txt-light: rgb(0, 0, 0);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100svh;
+    font-size: 1rem;
+    font-family: "Abel", sans-serif;
+    line-height: 1.5;
+
+    background-color: var(--bg-light);
+    color: var(--txt-light);
+  }
+}
+
