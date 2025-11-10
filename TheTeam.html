@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav id="navbar" class="navbar" style="padding-top: 5px;">
+            <button class="tButton">PORTAL LOGIN</button>
+            <button class="tButton" onclick="window.location.href='index.html'">HOME</button>
+            <img style="width: 100px; height: 100px;" src="https://i.postimg.cc/J7JsGs5S/Screenshot-2025-11-06-203858-removebg-preview.png">
+            <button class="tButton" onclick="window.location.href='sponsors.html'">SPONSORS</button>
+            <button class="tButton" onclick="window.location.href='TheTeam.html'">THE TEAM</button>
+        </nav>
+        <script>
+            const navbar = document.getElementById('navbar');
+
+            window.addEventListener('scroll', () => {
+                const buttons = document.querySelectorAll('.tButton');
+
+                if (window.scrollY > 1) { 
+                    navbar.classList.add('scrolled');
+                    buttons.forEach(button => {
+                        button.style.color = 'black';
+                    });
+                } else {
+                    navbar.classList.remove('scrolled');
+                    buttons.forEach(button => {
+                        button.style.color = 'white';
+                    });
+                }
+            });
+        </script>
+        <section>
+            The Team
+        </section>
+    </body>
+</html>
