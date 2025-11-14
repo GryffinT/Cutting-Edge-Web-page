@@ -45,22 +45,21 @@
   justify-items: center;
   align-items: center;
   background-color: maroon;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   gap: 40px;
-  padding: 10% 5% auto auto;
+  padding: 10% 5%;
 }
 
 .sponsorHero > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: flex-start;
   color: white;
   text-align: left;
 }
 
-/* --- Text Column --- */
 .textColumn h1 {
   font-size: 50px;
   margin: 0;
@@ -73,12 +72,49 @@
   max-width: 600px;
 }
 
-/* --- Card Column --- */
 .cardColumn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.cardColumn img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+
+  .sponsorHero {
+    grid-template-columns: 1fr;  /* stack vertically */
+    gap: 60px;
+    text-align: center;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+
+  .sponsorHero > div {
+    align-items: center;  /* center content on small screens */
+    text-align: center;
+  }
+
+  .textColumn h1 {
+    font-size: 40px;
+  }
+
+  .textColumn p {
+    font-size: 20px;
+  }
+
+  .cardColumn img {
+    max-width: 90%;
+    max-height: 350px;  /* prevents gigantically tall images */
+  }
+}
+
 
 /* Card styles */
 /* From Uiverse.io by andrew-demchenk0 */ 
@@ -310,42 +346,35 @@
 }
 
 .logo-loop-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-}
-
-.logo-loop {
-  position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px 0;
+    height: 100px;
+    position: relative;
 }
 
 .logo-track {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: scroll 40s linear infinite;
+    display: flex;
+    gap: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .logo-track img {
-  height: 80px;
-  margin: 0 40px;
-  flex-shrink: 0;
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+    height: 80px;
+    flex-shrink: 0;
+    margin-right: 50px;
+    margin-top: .1%;
 }
 
 .expandingContainer {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .expandingCard {

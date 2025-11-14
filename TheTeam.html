@@ -1,85 +1,182 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body style="height: 100%;">
-        <nav id="navbar" class="navbar" style="padding-top: 5px;">
-            <button class="tButton">PORTAL LOGIN</button>
-            <button class="tButton" onclick="window.location.href='index.html'">HOME</button>
-            <img style="width: 100px; height: 100px;" src="https://i.postimg.cc/J7JsGs5S/Screenshot-2025-11-06-203858-removebg-preview.png">
-            <button class="tButton" onclick="window.location.href='sponsors.html'">SPONSORS</button>
-            <button class="tButton" onclick="window.location.href='TheTeam.html'">THE TEAM</button>
-        </nav>
-        <script>
-            const navbar = document.getElementById('navbar');
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-            window.addEventListener('scroll', () => {
-                const buttons = document.querySelectorAll('.tButton');
+<body style="height: 100%; margin: 0; padding: 0;">
 
-                if (window.scrollY > 1) { 
-                    navbar.classList.add('scrolled');
-                    buttons.forEach(button => {
-                        button.style.color = 'black';
-                    });
-                } else {
-                    navbar.classList.remove('scrolled');
-                    buttons.forEach(button => {
-                        button.style.color = 'white';
-                    });
-                }
-            });
-        </script>
-        <section style="background-color: maroon;width:100vw; height: 70vh;">
-            <div style="background-color: rgb(215, 215, 215); width: 10%;height: 60%;border-radius: 15px;">
-                <img src="https://i.postimg.cc/V6ZcDWwM/32237069-sl-072622-51930-13.jpg" style="display: block;object-fit: cover;width: 100%;height: 100%; border-radius: 15px;">
-            </div>
-        </section>
-        <section>
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar" style="padding-top: 5px;">
+        <button class="tButton">PORTAL LOGIN</button>
+        <button class="tButton" onclick="window.location.href='index.html'">HOME</button>
+        <img style="width: 100px; height: 100px;" 
+             src="https://i.postimg.cc/J7JsGs5S/Screenshot-2025-11-06-203858-removebg-preview.png">
+        <button class="tButton" onclick="window.location.href='sponsors.html'">SPONSORS</button>
+        <button class="tButton" onclick="window.location.href='TheTeam.html'">THE TEAM</button>
+    </nav>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const buttons = document.querySelectorAll('.tButton');
+
+            if (window.scrollY > 1) { 
+                navbar.classList.add('scrolled');
+                buttons.forEach(button => button.style.color = 'black');
+            } else {
+                navbar.classList.remove('scrolled');
+                buttons.forEach(button => button.style.color = 'white');
+            }
+        });
+    </script>
+
+    <section style="
+        background-color: maroon;
+        width: 100vw;
+        height: 70vh;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: start;
+        position: relative;
+        padding: 0 5%;
+        overflow: visible;
+    ">
         <div style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100vw;
-            padding: 5% 0;
-            gap: 40px;
-        ">
-            <div style="
-            flex: 1;
-            text-align: right;
-            padding-right: 40px;
-            ">
-            <h1 style="font-size: 2em;">Our people are our most valuable assets</h1>
-            </div>
-
-            <div style="
-            flex: 1;
-            background-color: white;
+            background-color: rgb(215, 215, 215);
+            width: 80%;       /* smaller than column width for margin */
+            height: 90%;
             border-radius: 15px;
-            max-width: 600px;
-            padding: 20px;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
             overflow: hidden;
-            ">
-            <img src="..." class="cardImage" style="max-width: 100%; height: auto; border-radius: 15px 15px 0 0;">
-            <h1>Name</h1>
-            <h2>Role</h2>
-            <p>Description</p>
+            align-self: end;  /* stick to bottom of the section */
+            justify-self: start; /* stick to left of column */
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            transform: translateY(10%); /* half overlapping the next section */
+        ">
+            <img src="https://i.postimg.cc/V6ZcDWwM/32237069-sl-072622-51930-13.jpg"
+                style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+
+        <div style="
+            display: grid;
+            height: 100%;           /* make grid container full height */
+            place-items: center;    /* centers both horizontally & vertically */
+            text-align: center;
+            color: white;
+        ">
+            <div>
+                <h1>Who we are</h1>
+                <p>We're leaders, programmers, designers, problem-solvers, and team players.</p>
             </div>
         </div>
-        </section>
-    </body>
+    </section>
+
+    <section>
+        <div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 0 10%;
+        margin-top: 15%;
+        ">
+        <hr style="flex: 1; border: none; height: 1px; background-color: #000000;">
+        <span style="margin: 0 10px; white-space: nowrap;font-weight: bold; font-size: 25px;">Software & Programming</span>
+        <hr style="flex: 1; border: none; height: 1px; background-color: #000000;">
+        </div>
+        <div class="sponGrid">
+            <section class="expandingContainer">
+                <div class="expandingCard">
+                    <div class="content">
+                    <p class="logo" style="font-weight: bold;">Person name & Role</p>
+                    <div class="h6"><img src="https://i.postimg.cc/V6ZcDWwM/32237069-sl-072622-51930-13.jpg" class="cardImage"></div>
+                        <div class="hover_content">
+                            <p>Desc</p>
+                        </div>
+                    </div>
+                </div>       
+            </section>
+        <div>
+    </section>
+    <section>
+        <div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 0 10%;
+        margin-top: 5%;
+        ">
+        <hr style="flex: 1; border: none; height: 1px; background-color: #000000;">
+        <span style="margin: 0 10px; white-space: nowrap;font-weight: bold; font-size: 25px;">Outreach & Business</span>
+        <hr style="flex: 1; border: none; height: 1px; background-color: #000000;">
+        </div>
+        
+        <div class="sponGrid">
+            <section class="expandingContainer">
+                <div class="expandingCard">
+                    <div class="content">
+                    <p class="logo" style="font-weight: bold;">Person name & Role</p>
+                    <div class="h6"><img src="https://i.postimg.cc/V6ZcDWwM/32237069-sl-072622-51930-13.jpg" class="cardImage"></div>
+                        <div class="hover_content">
+                            <p>Desc</p>
+                        </div>
+                    </div>
+                </div>       
+            </section>
+        <div>
+    </section>
+    <section>
+        <div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 0 10%;
+        margin-top: 5%;
+        ">
+        <hr style="flex: 1; border: none; height: 1px; background-color: #000000;">
+        <span style="margin: 0 10px; white-space: nowrap;font-weight: bold; font-size: 25px;">Build & Design</span>
+        <hr style="flex: 1; border: none; height: 1px; background-color: #000000;">
+        </div>
+        
+        <div class="sponGrid">
+            <section class="expandingContainer">
+                <div class="expandingCard">
+                    <div class="content">
+                    <p class="logo" style="font-weight: bold;">Person name & Role</p>
+                    <div class="h6"><img src="https://i.postimg.cc/V6ZcDWwM/32237069-sl-072622-51930-13.jpg" class="cardImage"></div>
+                        <div class="hover_content">
+                            <p>Desc</p>
+                        </div>
+                    </div>
+                </div>       
+            </section>
+        <div>
+    </section>
+</body>
+<footer style="background-color: rgb(87, 0, 0); margin: 0; padding: 5rem; color: white;">
+    <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 1rem;">
+        <img style="width: 100px; height: 100px;" src="https://i.postimg.cc/J7JsGs5S/Screenshot-2025-11-06-203858-removebg-preview.png">
+        <h1 style="margin: 0;">Cutting Edge #10909</h1>
+    </div>
+
+    <hr style="border: none; height: 2px; background-color: rgb(255, 255, 255); margin-bottom: 1rem;">
+
+    <div style="display: flex; align-items: flex-start; gap: 3rem;">
+        <p style="font-weight: bold; margin: 0;">
+            2219 Monroe Street<br>
+            Madison, WI 53711
+        </p>
+        <p style="margin: 0;">
+            edgewoodrobotics@edgewoodhs.org
+        </p>
+    </div>
+</footer>
 </html>
