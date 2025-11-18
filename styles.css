@@ -1,12 +1,41 @@
 .gButton {
-    background-color:maroon;
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
-    font-size: 15px;
-    padding: 10px;
-    border:none;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    background-color: rgb(97, 1, 1);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.gButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.gButton::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.3) 0%,
+        rgba(255,255,255,0.0) 60%
+    );
+    transform: rotate(25deg);
+    transition: all 0.5s ease;
+}
+
+.gButton:hover::after {
+    top: -50%;
+    left: 100%;
 }
 
 .sponGrid {
