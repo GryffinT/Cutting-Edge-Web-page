@@ -658,41 +658,43 @@
 }
 
 .valuesMasonry {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  margin: 50px 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    margin: 50px 0;
 }
 
 .valuesMasonry div {
-  background-color: rgb(201, 30, 30);
-  width: 100vw;
-  padding: 1%;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 10px; 
+    background-color: black;
+    width: 100vw;
+    padding: 1%;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px; 
 }
 
 .valuesMasonry .value {
-  white-space: nowrap;
+    white-space: nowrap;
+    color: white;
 }
 
 .valuesMasonry .blurb {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;  
-  min-width: 0;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;  
+    min-width: 0;
+    width: 100%;
+    color: white;
 }
 
 .valuesMasonry .blurb hr {
-  flex: 1;
-  max-width: calc(50% - 10px);
-  min-width: 0;
-  border: none;
-  border-top: 2px solid #000;
-  height: 0;
+    flex: 1;
+    max-width: calc(50% - 10px);
+    min-width: 0;
+    border: none;
+    border-top: 2px solid #000;
+    height: 0;
 }
 
